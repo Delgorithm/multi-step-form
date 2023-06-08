@@ -1,0 +1,60 @@
+:root{
+
+    /* Color : Primary */
+    --clr-marine-blue:hsl(213,96%,18%);
+    --clr-purplish-blue:hsl(243,100%,62%);
+    --clr-pastel-blue:hsl(228,100%,84%);
+    --clr-light-blue:hsl(206,94%,87%);
+    --clr-strawberry-red:hsl(354,84%,57%);
+
+    /* Color : Neutral */
+    --clr-cool-gray:hsl(231,11%,63%);
+    --clr-light-gray:hsl(229,24%,87%);
+    --clr-magnolia:hsl(217,100%,97%);
+    --clr-alabaster:hsl(231,100%,99%);
+    --clr-white:hsl(0,0%,100%);
+
+    /* Font : Weight */
+    --fw-thin: 400;
+    --fw-medium: 500;
+    --fw-big: 700;
+
+    /* Font : Size */
+    --fs-small : ;
+    --fs-medium: ;
+    --fs-big: ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    line-height: 1.5;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    min-height: 100svh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+/* Hiding all the steps except the first one */
+.form-step-2,
+.form-step-3,
+.form-step-4,
+.form-step-5{
+    display: none;
+}
+
+/* Form step 1 */
+.form{
+    background-color: aqua;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 50svh;
+}
