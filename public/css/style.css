@@ -15,14 +15,15 @@
     --clr-white:hsl(0,0%,100%);
 
     /* Font : Weight */
+    --fw-needle: 300;
     --fw-thin: 400;
     --fw-medium: 500;
     --fw-big: 700;
 
     /* Font : Size */
     --fs-small : ;
-    --fs-medium: ;
-    --fs-big: ;
+    --fs-normal : 1em;
+    --fs-big: 1.4em;
 }
 
 *{
@@ -49,12 +50,60 @@ body{
     display: none;
 }
 
-/* Form step 1 */
+/* ------------------- Btn for each form's steps ------------------- */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.steps-form{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0rem 6rem;
+    background-image: url(/assets/images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.steps-form button{
+    width: 35px;
+    padding: 5px;
+    border-color: var(--clr-white);
+    border-radius: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* -------------------Form step 1 ------------------- */
+
 .form{
-    background-color: aqua;
-    margin: 1rem;
-    padding: 1rem;
+    background-color: var(--clr-white);
+    position: fixed;
     display: flex;
     flex-direction: column;
-    height: 50svh;
+    top: 78px;
+    left: 0;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 2vmax;
+}
+
+.form p:nth-child(1){
+    font-size: 1.4em;
+    font-weight: var(--fw-big);
+}
+
+.form p:nth-child(2){
+    font-size: 0.96em;
+    font-weight: var(--fw-needle);
+    color: var(--clr-cool-gray);
+}
+
+input{
+    margin-bottom: 1rem;
 }
