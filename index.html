@@ -32,16 +32,16 @@
     </style>
   </head>
   <body>
+    <header>
+      <section class="steps-form">
+        <button class="step1 step1-active">1</button>
+        <button class="step2">2</button>
+        <button class="step3">3</button>
+        <button class="step4">4</button>
+      </section>
+    </header>
     <main>
-      <header>
-        <section class="steps-form">
-          <button class="step1 step1-active">1</button>
-          <button class="step2">2</button>
-          <button class="step3">3</button>
-          <button class="step4">4</button>
-        </section>
-      </header>
-      <section class="form-step-1 form-step-1-active">
+      <section class="form-step-1">
         <form action="" class="form">
           <p>Personal info</p>
           <p>Please provide your name, email address, and phone number.</p>
@@ -75,42 +75,43 @@
           />
           <small></small>
         </form>
-        <section class="btn-next-previous">
-          <button class="previous-step">Go Back</button>
-          <button class="next-step">Next Step</button>
-        </section>
       </section>
       <section class="form-step-2">
         <form action="" class="form">
           <p>Select your plan</p>
           <p>You have the option of monthly or yearly billing.</p>
-          <button class="arcade">
-            <picture>
-              <img src="/assets/images/icon-arcade.svg" alt="Arcade plan" />
-            </picture>
-            <div class="arcade-properties">
-              <p>Arcade</p>
-              <p>$9/mo</p>
-            </div>
-          </button>
-          <button class="advanced">
-            <picture>
-              <img src="/assets/images/icon-advanced.svg" alt="Advanced plan" />
-            </picture>
-            <div class="advanced-properties">
-              <p>Advanced</p>
-              <p>$12/mo</p>
-            </div>
-          </button>
-          <button class="pro">
-            <picture>
-              <img src="/assets/images/icon-pro.svg" alt="Pro plan" />
-            </picture>
-            <div class="pro-properties">
-              <p>Pro</p>
-              <p>$15/mo</p>
-            </div>
-          </button>
+          <div class="properties">
+            <button class="arcade">
+              <picture>
+                <img src="/assets/images/icon-arcade.svg" alt="Arcade plan" />
+              </picture>
+              <div class="arcade-properties">
+                <p>Arcade</p>
+                <p>$9/mo</p>
+              </div>
+            </button>
+            <button class="advanced">
+              <picture>
+                <img
+                  src="/assets/images/icon-advanced.svg"
+                  alt="Advanced plan"
+                />
+              </picture>
+              <div class="advanced-properties">
+                <p>Advanced</p>
+                <p>$12/mo</p>
+              </div>
+            </button>
+            <button class="pro">
+              <picture>
+                <img src="/assets/images/icon-pro.svg" alt="Pro plan" />
+              </picture>
+              <div class="pro-properties">
+                <p>Pro</p>
+                <p>$15/mo</p>
+              </div>
+            </button>
+          </div>
           <div class="plan-selection">
             <p>Monthly</p>
             <label class="switch">
@@ -176,6 +177,12 @@
         </p>
       </section>
     </main>
+    <footer>
+      <section class="btn-next-previous">
+        <button class="previous-step">Go Back</button>
+        <button class="next-step">Next Step</button>
+      </section>
+    </footer>
     <script src="/public/js/script.js" defer></script>
   </body>
 </html>
