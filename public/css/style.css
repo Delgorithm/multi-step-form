@@ -21,7 +21,7 @@
     --fw-big: 700;
 
     /* Font : Size */
-    --fs-small : ;
+    --fs-small : 0.75em;
     --fs-normal : 1em;
     --fs-big: 1.4em;
 }
@@ -40,9 +40,10 @@ body{
     width: 100%;
     display: grid;
     place-content: center;
+    background-color: var(--clr-magnolia);
 }
 
-/* Hiding all the steps except the first one */
+/* Hiding all the steps except the first one */ 
 .form-step-2,
 .form-step-3,
 .form-step-4,
@@ -73,29 +74,38 @@ header{
 .steps-form button{
     width: 35px;
     padding: 5px;
+    border: 1px solid;
+    color: var(--clr-white);
     border-color: var(--clr-white);
     border-radius: 100%;
     background-color: transparent;
     cursor: pointer;
 }
 
-/* -------------------Form step 1 ------------------- */
+/* ------------------- Form step 1 ------------------- */
 
-.form{
-    background-color: var(--clr-white);
+.form-step-1{
+    display: block;
     position: fixed;
-    display: flex;
-    flex-direction: column;
     top: 78px;
     left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
     padding: 2rem;
-    border-radius: 2vmax;
+    border-radius: 1vmax;
+    background-color: var(--clr-white);
 }
 
 .form p:nth-child(1){
     font-size: 1.4em;
     font-weight: var(--fw-big);
+    color: var(--clr-marine-blue);
 }
 
 .form p:nth-child(2){
@@ -104,6 +114,106 @@ header{
     color: var(--clr-cool-gray);
 }
 
-input{
-    margin-bottom: 1rem;
+.form-step-1 label{
+    font-size: var(--fs-small);
+    font-weight: var(--fw-thin);
+    color: var(--clr-marine-blue);
+}
+
+.form-step-1 label{
+    margin-top: 1rem;
+}
+
+.form-step-1 input{
+    padding: 0.5rem;
+    border: 1px solid;
+    border-color: var(--clr-light-gray);
+    border-radius: 1vmax;
+    text-indent: 10px;
+}
+
+.form-step-1 input::placeholder{
+    color: var(--clr-cool-gray);
+    text-indent: 10px;
+}
+
+.form-step-1 input:focus{
+    outline-color: var(--clr-marine-blue);
+}
+
+/* ------------------- Form step 2 ------------------- */
+.form-step-2,
+.form-step-3,
+.form-step-4{
+    position: fixed;
+    top: 78px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.form-step-2 .form p:nth-child(1){
+    font-size: 1.4em;
+    font-weight: var(--fw-big);
+    color: var(--clr-marine-blue);
+}
+
+.form-step-2 .form p:nth-child(2){
+    font-size: 0.96em;
+    font-weight: var(--fw-needle);
+    color: var(--clr-cool-gray);
+    padding-bottom: 10px;
+};
+
+.form-step-2 .properties{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-step-2 button{
+    border-radius: 1vmax;
+    border: 1px solid var(--clr-light-gray);
+}
+/* ------------------- Form step 3 ------------------- */
+/* ------------------- Form step 4 ------------------- */
+
+
+
+
+/* ------------------- Footer ------------------- */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.btn-next-previous{
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.btn-next-previous .previous-step{
+    visibility: hidden;
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: var(--clr-white);
+    color: var(--clr-cool-gray);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-next-previous .next-step{
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: var(--clr-marine-blue);
+    color: var(--clr-white);
+    border-radius: 5px;
+    cursor: pointer;
 }
