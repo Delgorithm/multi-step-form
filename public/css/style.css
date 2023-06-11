@@ -258,7 +258,7 @@ header{
     height: 15px;
     background: var(--clr-white);
     border-radius: 100vmax;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .plan-selection input:checked + label:after{
