@@ -120,18 +120,6 @@ header{
     background-color: var(--clr-alabaster);
 }
 
-.plan-selection p:nth-child(1){
-    font-size: var(--fs-normal);
-    font-weight: var(--fw-medium);
-    color: var(--clr-marine-blue);
-}
-
-.plan-selection p:nth-child(4){
-    font-size: var(--fs-normal);
-    font-weight: var(--fw-medium);
-    color: var(--clr-cool-gray);
-}
-
 .plan-selection input[type=checkbox]{
     display: none;
 }
@@ -173,11 +161,10 @@ header{
     color: var(--clr-marine-blue);
 }
 
-.plan-selection p:nth-child(2){
+.plan-selection p:nth-child(4){
     font-size: var(--fs-normal);
     font-weight: var(--fw-needle);
     color: var(--clr-cool-gray);
-    padding-bottom: 10px;
 }
 
 /* ------------------- Form step 1 ------------------- */
@@ -337,9 +324,11 @@ header{
 
 .form-step-4 .conclusion-properties{
     display: flex;
+    width: 100%;
     flex-direction: column;
     background-color: var(--clr-alabaster);
     padding: 1rem;
+    border-radius: 1vmax;
 }
 
 .conclusion-properties-type,
@@ -347,8 +336,72 @@ header{
 .conclusion-properties-storage,
 .conclusion-properties-total{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+}
+
+.form-step-4 .form .conclusion-properties-type-display p,
+.form-step-4 .form .conclusion-properties-online-display p,
+.form-step-4 .form .conclusion-properties-storage-display p,
+.form-step-4 .form .conclusion-properties-total p:nth-child(1){
+    font-size: var(--fs-small-2);
+}
+
+.form-step-4 .form .conclusion-properties-type-bill p,
+.form-step-4 .form .conclusion-properties-online-bill p,
+.form-step-4 .form .conclusion-properties-storage-bill p{
+    font-size: var(--fs-small-2);
+}
+
+
+.form-step-4 .form .conclusion-properties-online-display p,
+.form-step-4 .form .conclusion-properties-storage-display p,
+.form-step-4 .form .conclusion-properties-online-bill p,
+.form-step-4 .form .conclusion-properties-storage-bill p,
+.form-step-4 .form .conclusion-properties-total p{
+    font-weight: var(--fw-thin);
+}
+
+.form-step-4 .form .conclusion-properties-online{
+    padding-bottom: 1rem;
+}
+
+.form-step-4 .form .conclusion-properties-type-display p:nth-child(2){
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-step-4 .form .conclusion-properties-total{
+    padding: 1rem;
+}
+
+.form-step-4 .form .conclusion-properties-total p:nth-child(2){
+    padding-bottom: 0;
+    font-weight: var(--fw-big);
+    color: var(--clr-purplish-blue);
+}
+
+.form-step-4 .form .conclusion-properties-online-display p,
+.form-step-4 .form .conclusion-properties-storage-display p,
+.form-step-4 .form .conclusion-properties-total p{
+    color: var(--clr-cool-gray);
+}
+
+.form-step-4 .form .conclusion-properties-online-bill p,
+.form-step-4 .form .conclusion-properties-storage-bill p{
+    color: var(--clr-marine-blue);
+}
+
+
+
+
+/* Step 4 : Span */
+.form-step-4 .conclusion-properties span{
+    align-self: center;
+    width: 100%;
+    margin: 1rem;
+    height: 1px;
+    background-color: var(--clr-light-gray);
 }
 
 
