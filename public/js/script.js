@@ -27,6 +27,8 @@ btn1.addEventListener('click', () => {
     form2.style.display = "none";
     form3.style.display = "none";
     form4.style.display = "none";
+    btn1.style.backgroundColor = "#adbeff";
+    btnPrevious.style.visibility = "hidden";
 });
 
 btn2.addEventListener('click', () => {
@@ -34,6 +36,7 @@ btn2.addEventListener('click', () => {
     form1.style.display = "none";
     form3.style.display = "none";
     form4.style.display = "none";
+    btn2.style.backgroundColor = "#adbeff";
     btnPrevious.style.visibility = "visible";
 });
 
@@ -42,6 +45,7 @@ btn3.addEventListener('click', () => {
     form1.style.display = "none";
     form2.style.display = "none";
     form4.style.display = "none";
+    btn3.style.backgroundColor = "#adbeff";
     btnPrevious.style.visibility = "visible";
 });
 
@@ -50,5 +54,6 @@ btn4.addEventListener('click', () => {
     form1.style.display = "none";
     form2.style.display = "none";
     form3.style.display = "none";
+    btn4.style.backgroundColor = "#adbeff";
     btnPrevious.style.visibility = "visible";
 });
