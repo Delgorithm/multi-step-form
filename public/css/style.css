@@ -253,16 +253,17 @@ header{
     font-weight: var(--fw-medium);
 }
 
-.form-step-2 .form .arcade-properties p:nth-child(3),
-.form-step-2 .form .advanced-properties p:nth-child(3),
-.form-step-2 .form .pro-properties p:nth-child(3){
+.form-step-2 .form .advertisement{
     color: var(--clr-marine-blue);
     display: none;
 }
 
 .form-step-2 .form .arcade:hover,
+.form-step-2 .form .arcade:focus,
 .form-step-2 .form .advanced:hover,
-.form-step-2 .form .pro:hover{
+.form-step-2 .form .advanced:focus,
+.form-step-2 .form .pro:hover,
+.form-step-2 .form .pro:focus{
     background-color: var(--clr-alabaster);
     border: 1px solid var(--clr-purplish-blue);
 }
@@ -281,6 +282,7 @@ header{
     border-radius: 1vmax;
     border: 1px solid var(--clr-light-gray);
     background-color: var(--clr-white);
+    cursor: pointer;
 }
 
 .form-step-3 .form .online-service input,
@@ -294,6 +296,16 @@ header{
 .form-step-3 .form .customizable-profile-properties{
     text-align: left;
     width: 100%;
+}
+
+.form-step-3 .form .online-service:hover,
+.form-step-3 .form .online-service:focus,
+.form-step-3 .form .larger-storage:hover,
+.form-step-3 .form .larger-storage:focus,
+.form-step-3 .form .customizable-profile:hover,
+.form-step-3 .form .customizable-profile:focus{
+    background-color: var(--clr-alabaster);
+    border: 1px solid var(--clr-purplish-blue);
 }
 
 .form-step-3 .form .online-service-properties p:nth-child(1),
