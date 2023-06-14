@@ -29,7 +29,6 @@
 
 /* ------------------- Globals ------------------- */
 
-
 *{
     margin: 0;
     padding: 0;
@@ -48,6 +47,7 @@ body{
 }
 
 /* - Hiding all the steps except the first one - */ 
+
 .form-step-2,
 .form-step-3,
 .form-step-4,
@@ -178,7 +178,6 @@ header{
     margin: auto;
 }
 
-
 .form-step-1 label{
     font-size: var(--fs-small);
     font-weight: var(--fw-thin);
@@ -218,13 +217,13 @@ header{
     margin: auto;
 }
 
-
 .form-step-2 .form .properties,
 .form-step-3 .form .properties{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 /* ------------------- Form step 2 ------------------- */
 
 .form-step-2 .form .arcade,
@@ -328,10 +327,6 @@ header{
     font-weight: var(--fw-thin);
 }
 
-/* Make labels clickable and toggle the checkbox */
-
-
-
 /* ------------------- Form step 4 ------------------- */
 
 .form-step-4 .conclusion-properties{
@@ -346,6 +341,7 @@ header{
 .conclusion-properties-type,
 .conclusion-properties-online,
 .conclusion-properties-storage,
+.conclusion-properties-customizable,
 .conclusion-properties-total{
     display: flex;
     justify-content: space-between;
@@ -355,27 +351,51 @@ header{
 .form-step-4 .form .conclusion-properties-type-display p,
 .form-step-4 .form .conclusion-properties-online-display p,
 .form-step-4 .form .conclusion-properties-storage-display p,
+.form-step-4 .form .conclusion-properties-customizable-display p,
 .form-step-4 .form .conclusion-properties-total p:nth-child(1){
     font-size: var(--fs-small-2);
 }
 
 .form-step-4 .form .conclusion-properties-type-bill p,
 .form-step-4 .form .conclusion-properties-online-bill p,
-.form-step-4 .form .conclusion-properties-storage-bill p{
+.form-step-4 .form .conclusion-properties-storage-bill p,
+.form-step-4 .form .conclusion-properties-customizable-bill p{
     font-size: var(--fs-small-2);
 }
 
-
 .form-step-4 .form .conclusion-properties-online-display p,
-.form-step-4 .form .conclusion-properties-storage-display p,
 .form-step-4 .form .conclusion-properties-online-bill p,
+.form-step-4 .form .conclusion-properties-storage-display p,
 .form-step-4 .form .conclusion-properties-storage-bill p,
+.form-step-4 .form .conclusion-properties-customizable-display p,
+.form-step-4 .form .conclusion-properties-customizable-bill p,
 .form-step-4 .form .conclusion-properties-total p{
     font-weight: var(--fw-thin);
 }
 
-.form-step-4 .form .conclusion-properties-online{
+.form-step-4 .form .conclusion-properties-online,
+.form-step-4 .form .conclusion-properties-storage,
+.form-step-4 .form .conclusion-properties-customizable{
     padding-bottom: 1rem;
+}
+
+.form-step-4 .form .conclusion-properties-total p:nth-child(2){
+    padding-bottom: 0;
+    font-weight: var(--fw-big);
+    color: var(--clr-purplish-blue);
+}
+
+.form-step-4 .form .conclusion-properties-online-display p,
+.form-step-4 .form .conclusion-properties-storage-display p,
+.form-step-4 .form .conclusion-properties-total p,
+.form-step-4 .form .conclusion-properties-customizable p{
+    color: var(--clr-cool-gray);
+}
+
+.form-step-4 .form .conclusion-properties-online-bill p,
+.form-step-4 .form .conclusion-properties-storage-bill p,
+.form-step-4 .form .conclusion-properties-customizable-bill p{
+    color: var(--clr-marine-blue);
 }
 
 .form-step-4 .form .conclusion-properties-type-display p:nth-child(2){
@@ -387,26 +407,6 @@ header{
     padding: 1rem;
 }
 
-.form-step-4 .form .conclusion-properties-total p:nth-child(2){
-    padding-bottom: 0;
-    font-weight: var(--fw-big);
-    color: var(--clr-purplish-blue);
-}
-
-.form-step-4 .form .conclusion-properties-online-display p,
-.form-step-4 .form .conclusion-properties-storage-display p,
-.form-step-4 .form .conclusion-properties-total p{
-    color: var(--clr-cool-gray);
-}
-
-.form-step-4 .form .conclusion-properties-online-bill p,
-.form-step-4 .form .conclusion-properties-storage-bill p{
-    color: var(--clr-marine-blue);
-}
-
-
-
-
 /* Step 4 : Span */
 .form-step-4 .conclusion-properties span{
     align-self: center;
@@ -416,8 +416,15 @@ header{
     background-color: var(--clr-light-gray);
 }
 
+/* Step 4 : Hiding add-ons */
+.conclusion-properties-online,
+.conclusion-properties-storage,
+.conclusion-properties-customizable{
+    display: none;
+}
 
 /* ------------------- Footer ------------------- */
+
 footer{
     position: fixed;
     bottom: 0;
