@@ -70,6 +70,11 @@ const pConclusionOnline = document.querySelector('.conclusion-properties-online'
 const pConclusionStorage = document.querySelector('.conclusion-properties-storage');
 const pConclusionCustomizable = document.querySelector('.conclusion-properties-customizable');
 
+// Step form 4 : Add-ons prices
+const priceOnlineBill = document.querySelector('.conclusion-properties-online-bill p:nth-child(1)');
+const priceStorageBill = document.querySelector('.conclusion-properties-storage-bill p:nth-child(1)');
+const priceCustomizableBill = document.querySelector('.conclusion-properties-customizable-bill p:nth-child(1)');
+
 // Step form 4 : Adding the total value
 const conclusionPrice = document.querySelector('.conclusion-properties-total');
 const pConclusionPrice = document.querySelector('.conclusion-properties-total p:nth-child(2)');
@@ -154,6 +159,12 @@ btnAddOns.forEach(btn => {
 // From step 2 : Month & Yearly 
 
 // Function for the selected plan : Month & Yearly
+
+// // Step form 4 : Add-ons prices
+// const priceOnlineBill = document.querySelector('.conclusion-properties-online-bill p:nth-child(1)');
+// const priceStorageBill = document.querySelector('.conclusion-properties-storage-bill p:nth-child(1)');
+// const priceCustomizableBill = document.querySelector('.conclusion-properties-customizable-bill p:nth-child(1)');
+
 const toggleCheckbox = () => {
     checkboxPlanSelection.checked = !checkboxPlanSelection.checked;
 
@@ -161,14 +172,14 @@ const toggleCheckbox = () => {
         priceArcade.textContent = "$90/yr";
         priceAdvanced.textContent = "$120/yr";
         pricePro.textContent = "$150/yr";
+
+        priceOnlineBill.textContent = "+$10/yr";
+        priceStorageBill.textContent = "+$20/yr";
+        priceCustomizableBill.textContent = "+$20/yr"
         
         pMonthly.style.fontSize = "1em";
         pMonthly.style.fontWeight = "300";
         pMonthly.style.color = "#9699ab";
-
-        priceOnlineService.innerText = "+$10/yr";
-        priceLargerStorage.innerText = "+$20/yr";
-        priceCustomizableProfile.innerText = "+$20/yr";
 
         setTimeout(() => {
             pYearly.style.fontSize = "1.4em";
@@ -182,13 +193,13 @@ const toggleCheckbox = () => {
         pricePro.textContent = "$15/mo";
         pAdvertisement.display = "block";
 
+        priceOnlineBill.textContent = "+$1/mo";
+        priceStorageBill.textContent = "+$2/mo";
+        priceCustomizableBill.textContent = "+$2/mo"
+
         pYearly.style.fontSize = "1em";
         pYearly.style.fontWeight = "300";
         pYearly.style.color = "#9699ab";
-
-        priceOnlineService.innerText = "+$1/mo";
-        priceLargerStorage.innerText = "+$2/mo";
-        priceCustomizableProfile.innerText = "+$2/mo";
 
         setTimeout(() => {
             pMonthly.style.fontSize = "1.4em";
@@ -199,8 +210,6 @@ const toggleCheckbox = () => {
 };
 
 planSelection.addEventListener('click', toggleCheckbox);
-
-
 
 // Form step 3 : If a btn is selected, it checked the input "checkbox"
 btnOnlineService.addEventListener('click', () => {
