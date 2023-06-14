@@ -51,73 +51,83 @@ const checkboxOnlineService = btnOnlineService.querySelector('input[type="checkb
 const checkboxLargerStorage = btnLargerStorage.querySelector('input[type="checkbox"]');
 const checkboxCustomizableProfile = btnCustomizableProfile.querySelector('input[type="checkbox"]');
 
+// Step form 3 : price
+const priceOnlineService = document.querySelector('.online-service-properties-bill p:nth-child(1)');
+const priceLargerStorage = document.querySelector('.larger-storage-properties-bill p:nth-child(1)');
+const priceCustomizableProfile = document.querySelector('.customizable-profile-properties-bill p:nth-child(1)');
+
+// Step form 4 : Plan's price selected from step 2 
+const pPlanPrice = document.querySelector('.conclusion-properties-type-bill p:nth-child(1)');
+
+// Step form 4 : Change the name of the selected plan
+const pPlanSelected = document.querySelector('.conclusion-properties-type-display p:nth-child(1)');
+
+// Step form 4 : Change the selected plan and go back to step form 2
+const pChangePlan = document.querySelector('.conclusion-properties-type-display p:nth-child(2)');
+
+// Step form 4 : Adding the add-ons if selected on step form 2
+const pConclusionOnline = document.querySelector('.conclusion-properties-online');
+const pConclusionStorage = document.querySelector('.conclusion-properties-storage');
+const pConclusionCustomizable = document.querySelector('.conclusion-properties-customizable');
+
+// Step form 4 : Adding the total value
+const conclusionPrice = document.querySelector('.conclusion-properties-total');
+const pConclusionPrice = document.querySelector('.conclusion-properties-total p:nth-child(2)');
+
 
 // Event to show the next form, if the btn "next-step" is clicked
 
-
-
-// Make btn steps for pages to display the selected page
-btn1.addEventListener('click', () => {
-    form1.style.display = "block";
-    form2.style.display = "none";
-    form3.style.display = "none";
-    form4.style.display = "none";
-    btn1.style.backgroundColor = "#adbeff"
-    btn2.style.backgroundColor = "transparent"
-    btn3.style.backgroundColor = "transparent"
-    btn4.style.backgroundColor = "transparent"
-    btnPrevious.style.visibility = "hidden";
-    btnNext.textContent = "Next Step";
-    btnNext.style.backgroundColor = "#02295a"
-});
-
-btn2.addEventListener('click', () => {
-    form2.style.display = "block";
-    form1.style.display = "none";
-    form3.style.display = "none";
-    form4.style.display = "none";
-
-    btn1.style.backgroundColor = "transparent";
-    btn2.style.backgroundColor = "#adbeff";
-    btn3.style.backgroundColor = "transparent";
-    btn4.style.backgroundColor = "transparent";
-    btnPrevious.style.visibility = "visible";
-
-    btnNext.textContent = "Next Step";
-    btnNext.style.backgroundColor = "#02295a"
-});
-
-btn3.addEventListener('click', () => {
-    form3.style.display = "block";
-    form1.style.display = "none";
-    form2.style.display = "none";
-    form4.style.display = "none";
-
-    btn1.style.backgroundColor = "transparent";
-    btn2.style.backgroundColor = "transparent";
-    btn3.style.backgroundColor = "#adbeff";
-    btn4.style.backgroundColor = "transparent";
-
-    btnPrevious.style.visibility = "visible";
-    btnNext.textContent = "Next Step";
-    btnNext.style.backgroundColor = "#02295a"
-});
-
-btn4.addEventListener('click', () => {
-    form4.style.display = "block";
+// Function to hide all steps
+function hideAllForms(){
     form1.style.display = "none";
     form2.style.display = "none";
     form3.style.display = "none";
+    form4.style.display = "none";
+}
 
+// Function to reinitialise all styles for btn steps
+function resetButtonStyle(){
     btn1.style.backgroundColor = "transparent";
     btn2.style.backgroundColor = "transparent";
     btn3.style.backgroundColor = "transparent";
-    btn4.style.backgroundColor = "#adbeff";
+    btn4.style.backgroundColor = "transparent";
+}
 
-    btnPrevious.style.visibility = "visible";
-    btnNext.textContent = "Confirm";
-    btnNext.style.backgroundColor = "#473dff"
+// Function to update the state of the step
+function updateCurrentStep(step){
+    hideAllForms();
+    resetButtonStyle();
+    
+    // Display the current form
+    step.form.style.display = "block";
+
+    // Change the color of the current step
+    step.button.style.backgroundColor = "#adbeff";
+
+    // Display or hide the btn "Go back"
+    btnPrevious.style.visibility = step.hasPrevious ? "visible" : "hidden";
+
+    // Display or change the btn "Next step / Confirm" and background color
+    btnNext.textContent = step.isLast ? "Confirm" : "Next Step";
+    btnNext.style.backgroundColor = step.isLast ? "#473dff" : "#02295a";
+
+}
+
+// Define steps
+const steps = [
+    { form: form1, button: btn1, hasPrevious: false, isLast: false },
+    { form: form4, button: btn4, hasPrevious: true, isLast: false },
+    { form: form2, button: btn2, hasPrevious: true, isLast: false },
+    { form: form3, button: btn3, hasPrevious: true, isLast: true },
+];
+
+// Event for btns to go to the step of the form
+steps.forEach((step) => {
+    step.button.addEventListener('click', () => {
+        updateCurrentStep(step);
+    });
 });
+
 
 // Event for btn steps pages 
 btnAllSteps.forEach(btn => {
@@ -141,9 +151,12 @@ btnAddOns.forEach(btn => {
     });
 });
 
+// From step 2 : Month & Yearly 
 
-planSelection.addEventListener('click', () => {
+// Function for the selected plan : Month & Yearly
+const toggleCheckbox = () => {
     checkboxPlanSelection.checked = !checkboxPlanSelection.checked;
+
     if(checkboxPlanSelection.checked){
         priceArcade.textContent = "$90/yr";
         priceAdvanced.textContent = "$120/yr";
@@ -152,6 +165,10 @@ planSelection.addEventListener('click', () => {
         pMonthly.style.fontSize = "1em";
         pMonthly.style.fontWeight = "300";
         pMonthly.style.color = "#9699ab";
+
+        priceOnlineService.innerText = "+$10/yr";
+        priceLargerStorage.innerText = "+$20/yr";
+        priceCustomizableProfile.innerText = "+$20/yr";
 
         setTimeout(() => {
             pYearly.style.fontSize = "1.4em";
@@ -169,13 +186,19 @@ planSelection.addEventListener('click', () => {
         pYearly.style.fontWeight = "300";
         pYearly.style.color = "#9699ab";
 
+        priceOnlineService.innerText = "+$1/mo";
+        priceLargerStorage.innerText = "+$2/mo";
+        priceCustomizableProfile.innerText = "+$2/mo";
+
         setTimeout(() => {
             pMonthly.style.fontSize = "1.4em";
             pMonthly.style.fontWeight = "700";
             pMonthly.style.color = "#02295a";
         }, 100);
     };
-});
+};
+
+planSelection.addEventListener('click', toggleCheckbox);
 
 
 
@@ -192,3 +215,55 @@ btnCustomizableProfile.addEventListener('click', () => {
     checkboxCustomizableProfile.checked = !checkboxCustomizableProfile.checked;
 });
 
+// If p "change" is selected, go back to form step 2 
+pChangePlan.addEventListener('click', () => {
+    form4.style.display = "none";
+    form2.style.display = "block";
+});
+
+// If selected plan is clicked && Monthly is clicked => $x for the step 4
+
+btnArcade.addEventListener('click', () => {
+    if(checkboxPlanSelection.checked){
+        pPlanPrice.innerText = "$90/yr";
+        pPlanSelected.innerText = "Arcade (Yearly)"
+    } else {
+        pPlanPrice.innerText = "$9/mo";
+        pPlanSelected.innerText = "Arcade (Monthly)"
+    }
+});
+
+btnAdvanced.addEventListener('click', () => {
+    if(checkboxPlanSelection.checked){
+        pPlanPrice.innerText = "$120/yr";
+        pPlanSelected.innerText = "Advanced (Yearly)"
+
+    } else {
+        pPlanPrice.innerText = "$12/mo";
+        pPlanSelected.innerText = "Advanced (Monthly)"
+    }
+});
+
+btnPro.addEventListener('click', () => {
+    if(checkboxPlanSelection.checked){
+        pPlanPrice.innerText = "$150/yr";
+        pPlanSelected.innerText = "Pro (Yearly)"
+    } else {
+        pPlanPrice.innerText = "$15/mo";
+        pPlanSelected.innerText = "Pro (Monthly)"
+    }
+});
+
+// Form step 4 : Make the add-ons visible if clicked on step 3
+
+btnOnlineService.addEventListener('click', () => {
+    pConclusionOnline.style.display = "flex";
+});
+
+btnLargerStorage.addEventListener('click', () => {
+    pConclusionStorage.style.display = "flex";
+});
+
+btnCustomizableProfile.addEventListener('click', () => {
+    pConclusionCustomizable.style.display = "flex";
+});
