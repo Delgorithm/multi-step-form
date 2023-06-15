@@ -32,247 +32,273 @@
     </style>
   </head>
   <body>
-    <header>
-      <section class="steps-form">
-        <button class="step1 step1-active">1</button>
-        <button class="step2">2</button>
-        <button class="step3">3</button>
-        <button class="step4">4</button>
-      </section>
-    </header>
     <main>
-      <!-- Form step 1 -->
-
-      <section class="form-step-1">
-        <form action="" class="form">
-          <p>Personal info</p>
-          <p>Please provide your name, email address, and phone number.</p>
-
-          <!-- Input : Name -->
-
-          <label for="name">Name</label>
-          <input
-            type="text"
-            placeholder="e.g. Stephen King"
-            id="name"
-            name="name"
-            required
-          />
-          <small></small>
-
-          <!-- Input :  Email -->
-
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            placeholder="e.g. stephenking@lorem.com"
-            id="email"
-            name="email"
-            required
-          />
-          <small></small>
-
-          <!-- Input : Phone number  -->
-
-          <label for="number">Phone Number</label>
-          <input
-            type="number"
-            placeholder="e.g. +1 234 567 890"
-            id="number"
-            name="number"
-            required
-          />
-          <small></small>
-        </form>
-      </section>
-
-      <!-- Form step 2 -->
-
-      <section class="form-step-2">
-        <form action="" class="form">
-          <p>Select your plan</p>
-          <p>You have the option of monthly or yearly billing.</p>
-          <div class="properties">
-            <!-- Btn : Arcade -->
-
-            <button class="arcade">
-              <picture>
-                <img src="/assets/images/icon-arcade.svg" alt="Arcade plan" />
-              </picture>
-              <div class="arcade-properties">
-                <p>Arcade</p>
-                <p>$9/mo</p>
-                <p class="advertisement">2 months free</p>
-              </div>
-            </button>
-
-            <!-- Btn : Advanced -->
-            <button class="advanced">
-              <picture>
-                <img
-                  src="/assets/images/icon-advanced.svg"
-                  alt="Advanced plan"
-                />
-              </picture>
-              <div class="advanced-properties">
-                <p>Advanced</p>
-                <p>$12/mo</p>
-                <p class="advertisement">2 months free</p>
-              </div>
-            </button>
-
-            <!-- Btn : Pro -->
-
-            <button class="pro">
-              <picture>
-                <img src="/assets/images/icon-pro.svg" alt="Pro plan" />
-              </picture>
-              <div class="pro-properties">
-                <p>Pro</p>
-                <p>$15/mo</p>
-                <p class="advertisement">2 months free</p>
-              </div>
-            </button>
+      <!-- Multi step form -->
+      <section class="multi-step-form">
+        <section class="step-form">
+          <div class="step-info">
+            <button class="step1 step1-active">1</button>
+            <span>
+              <p>Step 1</p>
+              <p>Your info</p>
+            </span>
           </div>
-
-          <!-- Btn : Monthly & Yearly -->
-
-          <div class="plan-selection">
-            <p>Monthly</p>
-            <input type="checkbox" id="switch" />
-            <label for="switch">Toggle</label>
-            <p>Yearly</p>
+          <div class="step-info">
+            <button class="step2">2</button>
+            <span>
+              <p>Step 2</p>
+              <p>Select plan</p>
+            </span>
           </div>
-        </form>
-      </section>
-
-      <!-- Form step 3 -->
-
-      <section class="form-step-3">
-        <form action="" class="form">
-          <p>Pick add-ons</p>
-          <p>Add-ons help enhance your gaming experience.</p>
-          <div class="properties">
-            <!-- Btn : Online service -->
-
-            <button class="online-service">
-              <label for="checkbox"></label>
-              <input type="checkbox" />
-              <div class="online-service-properties">
-                <p>Online service</p>
-                <p>Access to multiplayer games</p>
-              </div>
-              <div class="online-service-properties-bill">
-                <p>+$1/mo</p>
-              </div>
-            </button>
-
-            <!-- Btn : Larger storage -->
-
-            <button class="larger-storage">
-              <label for="checkbox"></label>
-              <input type="checkbox" />
-              <div class="larger-storage-properties">
-                <p>Larger storage</p>
-                <p>Extra 1TB of cloud save</p>
-              </div>
-              <div class="larger-storage-properties-bill">
-                <p>+$2/mo</p>
-              </div>
-            </button>
-
-            <!-- Btn : Customizable profile -->
-
-            <button class="customizable-profile">
-              <label for="checkbox"></label>
-              <input type="checkbox" />
-              <div class="customizable-profile-properties">
-                <p>Customizable profile</p>
-                <p>Custom theme on your profile</p>
-              </div>
-              <div class="customizable-profile-properties-bill">
-                <p>+$2/mo</p>
-              </div>
-            </button>
+          <div class="step-info">
+            <button class="step3">3</button>
+            <span>
+              <p>Step 3</p>
+              <p>Add-ons</p>
+            </span>
           </div>
-        </form>
-      </section>
+          <div class="step-info">
+            <button class="step4">4</button>
+            <span>
+              <p>Step 4</p>
+              <p>Summary</p>
+            </span>
+          </div>
+        </section>
 
-      <!-- Form step 4 -->
+        <!-- Form step 1 -->
 
-      <section class="form-step-4">
-        <form action="" class="form">
-          <p>Finishing up</p>
-          <p>Double-check if everything looks OK before confirming.</p>
-          <div class="conclusion-properties">
-            <!-- Conclusion : Type : Step 2 -->
+        <section class="form-step-1">
+          <form action="" class="form">
+            <p>Personal info</p>
+            <p>Please provide your name, email address, and phone number.</p>
 
-            <div class="conclusion-properties-type">
-              <div class="conclusion-properties-type-display">
-                <p>Arcade (Monthly)</p>
-                <p>Change</p>
-              </div>
-              <div class="conclusion-properties-type-bill">
-                <p>$9/mo</p>
-              </div>
-            </div>
-            <span></span>
+            <!-- Input : Name -->
 
-            <!-- Conclusion : Type : Step 3 : Part 1 -->
+            <label for="name">Name</label>
+            <input
+              type="text"
+              placeholder="e.g. Stephen King"
+              id="name"
+              name="name"
+              required
+            />
+            <small></small>
 
-            <div class="conclusion-properties-online">
-              <div class="conclusion-properties-online-display">
-                <p>Online service</p>
-              </div>
-              <div class="conclusion-properties-online-bill">
-                <p>+1$/mo</p>
-              </div>
+            <!-- Input :  Email -->
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              placeholder="e.g. stephenking@lorem.com"
+              id="email"
+              name="email"
+              required
+            />
+            <small></small>
+
+            <!-- Input : Phone number  -->
+
+            <label for="number">Phone Number</label>
+            <input
+              type="number"
+              placeholder="e.g. +1 234 567 890"
+              id="number"
+              name="number"
+              required
+            />
+            <small></small>
+          </form>
+        </section>
+
+        <!-- Form step 2 -->
+
+        <section class="form-step-2">
+          <form action="" class="form">
+            <p>Select your plan</p>
+            <p>You have the option of monthly or yearly billing.</p>
+            <div class="properties">
+              <!-- Btn : Arcade -->
+
+              <button class="arcade">
+                <picture>
+                  <img src="/assets/images/icon-arcade.svg" alt="Arcade plan" />
+                </picture>
+                <div class="arcade-properties">
+                  <p>Arcade</p>
+                  <p>$9/mo</p>
+                  <p class="advertisement">2 months free</p>
+                </div>
+              </button>
+
+              <!-- Btn : Advanced -->
+              <button class="advanced">
+                <picture>
+                  <img
+                    src="/assets/images/icon-advanced.svg"
+                    alt="Advanced plan"
+                  />
+                </picture>
+                <div class="advanced-properties">
+                  <p>Advanced</p>
+                  <p>$12/mo</p>
+                  <p class="advertisement">2 months free</p>
+                </div>
+              </button>
+
+              <!-- Btn : Pro -->
+
+              <button class="pro">
+                <picture>
+                  <img src="/assets/images/icon-pro.svg" alt="Pro plan" />
+                </picture>
+                <div class="pro-properties">
+                  <p>Pro</p>
+                  <p>$15/mo</p>
+                  <p class="advertisement">2 months free</p>
+                </div>
+              </button>
             </div>
 
-            <!-- Conclusion : Type : Step 3 : Part 2 -->
+            <!-- Btn : Monthly & Yearly -->
 
-            <div class="conclusion-properties-storage">
-              <div class="conclusion-properties-storage-display">
-                <p>Larger storage</p>
+            <div class="plan-selection">
+              <p>Monthly</p>
+              <input type="checkbox" id="switch" />
+              <label for="switch">Toggle</label>
+              <p>Yearly</p>
+            </div>
+          </form>
+        </section>
+
+        <!-- Form step 3 -->
+
+        <section class="form-step-3">
+          <form action="" class="form">
+            <p>Pick add-ons</p>
+            <p>Add-ons help enhance your gaming experience.</p>
+            <div class="properties">
+              <!-- Btn : Online service -->
+
+              <button class="online-service">
+                <label for="checkbox"></label>
+                <input type="checkbox" />
+                <div class="online-service-properties">
+                  <p>Online service</p>
+                  <p>Access to multiplayer games</p>
+                </div>
+                <div class="online-service-properties-bill">
+                  <p>+$1/mo</p>
+                </div>
+              </button>
+
+              <!-- Btn : Larger storage -->
+
+              <button class="larger-storage">
+                <label for="checkbox"></label>
+                <input type="checkbox" />
+                <div class="larger-storage-properties">
+                  <p>Larger storage</p>
+                  <p>Extra 1TB of cloud save</p>
+                </div>
+                <div class="larger-storage-properties-bill">
+                  <p>+$2/mo</p>
+                </div>
+              </button>
+
+              <!-- Btn : Customizable profile -->
+
+              <button class="customizable-profile">
+                <label for="checkbox"></label>
+                <input type="checkbox" />
+                <div class="customizable-profile-properties">
+                  <p>Customizable profile</p>
+                  <p>Custom theme on your profile</p>
+                </div>
+                <div class="customizable-profile-properties-bill">
+                  <p>+$2/mo</p>
+                </div>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Form step 4 -->
+
+        <section class="form-step-4">
+          <form action="" class="form">
+            <p>Finishing up</p>
+            <p>Double-check if everything looks OK before confirming.</p>
+            <div class="conclusion-properties">
+              <!-- Conclusion : Type : Step 2 -->
+
+              <div class="conclusion-properties-type">
+                <div class="conclusion-properties-type-display">
+                  <p>Arcade (Monthly)</p>
+                  <p>Change</p>
+                </div>
+                <div class="conclusion-properties-type-bill">
+                  <p>$9/mo</p>
+                </div>
               </div>
-              <div class="conclusion-properties-storage-bill">
-                <p>+2$/mo</p>
+              <span></span>
+
+              <!-- Conclusion : Type : Step 3 : Part 1 -->
+
+              <div class="conclusion-properties-online">
+                <div class="conclusion-properties-online-display">
+                  <p>Online service</p>
+                </div>
+                <div class="conclusion-properties-online-bill">
+                  <p>+1$/mo</p>
+                </div>
+              </div>
+
+              <!-- Conclusion : Type : Step 3 : Part 2 -->
+
+              <div class="conclusion-properties-storage">
+                <div class="conclusion-properties-storage-display">
+                  <p>Larger storage</p>
+                </div>
+                <div class="conclusion-properties-storage-bill">
+                  <p>+2$/mo</p>
+                </div>
+              </div>
+
+              <!-- Conclusion : Type : Step 3 : Part 3 -->
+
+              <div class="conclusion-properties-customizable">
+                <div class="conclusion-properties-customizable-display">
+                  <p>Customizable profile</p>
+                </div>
+                <div class="conclusion-properties-customizable-bill">
+                  <p>+2$/mo</p>
+                </div>
               </div>
             </div>
 
-            <!-- Conclusion : Type : Step 3 : Part 3 -->
+            <!-- Conclusion : Type : Step 4 : Total -->
 
-            <div class="conclusion-properties-customizable">
-              <div class="conclusion-properties-customizable-display">
-                <p>Customizable profile</p>
-              </div>
-              <div class="conclusion-properties-customizable-bill">
-                <p>+2$/mo</p>
-              </div>
+            <div class="conclusion-properties-total">
+              <p>Total</p>
+              <p>+$9/mo</p>
             </div>
-          </div>
+          </form>
+        </section>
 
-          <!-- Conclusion : Type : Step 4 : Total -->
+        <!-- Form step 5 -->
 
-          <div class="conclusion-properties-total">
-            <p>Total</p>
-            <p>+$9/mo</p>
-          </div>
-        </form>
-      </section>
-
-      <!-- Form step 5 -->
-
-      <section class="form-step-5">
-        <picture>
-          <img src="/assets/images/icon-thank-you.svg" alt="Thank you icon" />
-        </picture>
-        <p>Thank you!</p>
-        <p>
-          Thanks for confirming your subscription! <br />We hope you have fun
-          using our platform. If you ever need support, please feel free to
-          email us at support@loremgaming.com.
-        </p>
+        <section class="form-step-5">
+          <picture>
+            <img src="/assets/images/icon-thank-you.svg" alt="Thank you icon" />
+          </picture>
+          <p>Thank you!</p>
+          <p>
+            Thanks for confirming your subscription! <br />We hope you have fun
+            using our platform. If you ever need support, please feel free to
+            email us at support@loremgaming.com.
+          </p>
+        </section>
       </section>
     </main>
 
