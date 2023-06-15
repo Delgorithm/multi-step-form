@@ -112,6 +112,34 @@ body{
         padding-bottom: 10px;
     }
 
+    .form-step-2 .form .properties,
+    .form-step-3 .form .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    
+    }
+
+    .plan-selection{
+        margin-top: 20px;
+        padding: 5px;
+    }
+
+    /* Btn previous & next */
+
+    .btn-next-previous{
+        position: fixed;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .btn-next-previous .previous-step{
+        height: 40px;
+        width: 100px;
+    }
+    
     
 
 }
@@ -138,7 +166,7 @@ body{
         position: relative;
         border-radius: 1vmax;
         margin: 1rem;
-        min-height: 65svh;
+        min-height: 60svh;
         min-width: 30%;
         padding-top: 1rem;
         padding-left: 1rem;
@@ -166,12 +194,16 @@ body{
 
     .step-info p:nth-child(2){
         font-size: var(--fs-small-2);
+        font-weight: var(--fw-big);
         color: var(--clr-white);
+        letter-spacing: 2px;
     }
 
     /* Form */
 
-    .form{
+    /* Form step 1 */
+
+    .form-step-1 .form{
         display: flex;
         flex-direction: column;
         margin: 1rem;
@@ -184,6 +216,7 @@ body{
         font-size: var(--fs-desktop-big);
         font-weight: var(--fw-big);
         color: var(--clr-marine-blue);
+        padding-top: 1rem;
 
     }
 
@@ -191,14 +224,85 @@ body{
         font-size: var(--fs-normal);
         font-weight: var(--fw-needle);
         color: var(--clr-cool-gray);
+        padding-bottom: 1rem;
     }
 
-    footer{
-        display: none;
+    .form label{
+        padding-top: 20px;
+        padding-bottom: 2px;
     }
+
+    /* Form step 2 */
+
+    .form-step-2 .form,
+    .form-step-3 .form,
+    .form-step-4 .form,
+    .form-step-5{
+        position: fixed;
+        top: 22%;
+        left: 42%;
+        width: 50svh;
+    }
+
+    .form-step-2 .form .properties{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .form-step-2 .form .properties .arcade,
+    .form-step-2 .form .properties .advanced,
+    .form-step-2 .form .properties .pro{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding-top: 1rem;
+        width: 300px;
+    }
+
+    .form-step-2 .form .properties .arcade-properties p:nth-child(1),
+    .form-step-2 .form .properties .advanced-properties p:nth-child(1),
+    .form-step-2 .form .properties .pro-properties p:nth-child(1){
+        font-size: var(--fs-normal);
+    }
+
+    .plan-selection{
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .plan-selection p:nth-child(1){
+        padding-bottom: 15px;
+        padding: 0rem;
+    }
+
+    /* Form step 3 */
+    .form-step-3 .form .properties{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+
+    .online-service-properties-bill p,
+    .larger-storage-properties-bill p,
+    .customizable-profile-properties-bill p{
+        padding-bottom: 15px;
+    }
+
+    /* Footer btn */
+
+    .btn-next-previous{
+        position: fixed;
+        top: 655px;
+        left: 400px;
+        width: 500px;
+    }
+    
+
 }
 
 
+/* ---------------------------------------------------------------------- */
 
 .step-form button{
     width: 35px;
@@ -212,71 +316,7 @@ body{
 }
 
 
-
-
-
-/* Toggle button */
-
-.plan-selection{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 2rem;
-    padding: 1rem;
-    border-radius: 1vmax;
-    background-color: var(--clr-alabaster);
-}
-
-.plan-selection input[type=checkbox]{
-    display: none;
-}
-
-.plan-selection label{
-    position: relative;
-    display: block;
-    text-indent: -9999px;
-    width: 50px;
-    height: 22px;
-    border-radius: 2vmax;
-    background-color: var(--clr-marine-blue);   
-}
-
-.plan-selection label:after{
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 5px;
-    width: 15px;
-    height: 15px;
-    background: var(--clr-white);
-    border-radius: 100vmax;
-    transition: 0.35s;
-}
-
-.plan-selection input:checked + label:after{
-    left: calc(100% - 5px);
-    transform: translateX(-100%);
-}
-
-.plan-selection label:active::after{
-    width: 20px;
-}
-
-.plan-selection p:nth-child(1){
-    font-size: 1.4em;
-    font-weight: var(--fw-big);
-    color: var(--clr-marine-blue);
-}
-
-.plan-selection p:nth-child(4){
-    font-size: var(--fs-normal);
-    font-weight: var(--fw-needle);
-    color: var(--clr-cool-gray);
-}
-
 /* ------------------- Form step 1 ------------------- */
-
-
 
 .form-step-1 label{
     font-size: var(--fs-small);
@@ -317,12 +357,6 @@ body{
     margin: auto;
 }
 
-.form-step-2 .form .properties,
-.form-step-3 .form .properties{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
 
 /* ------------------- Form step 2 ------------------- */
 
@@ -352,7 +386,9 @@ body{
     font-weight: var(--fw-medium);
 }
 
-.form-step-2 .form .advertisement{
+.form-step-2 .form .arcade-properties p:nth-child(3),
+.form-step-2 .form .advanced-properties p:nth-child(3),
+.form-step-2 .form .pro-properties p:nth-child(3){
     color: var(--clr-marine-blue);
     display: none;
 }
@@ -366,6 +402,54 @@ body{
     background-color: var(--clr-alabaster);
     border: 1px solid var(--clr-purplish-blue);
 }
+
+/* Toggle button */
+
+.plan-selection{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* margin-top: 5px;
+    padding: 1rem; */
+    border-radius: 1vmax;
+    background-color: var(--clr-alabaster);
+}
+
+.plan-selection input[type=checkbox]{
+    display: none;
+}
+
+.plan-selection label{
+    position: relative;
+    display: block;
+    text-indent: -9999px;
+    width: 50px;
+    height: 22px;
+    border-radius: 2vmax;
+    background-color: var(--clr-marine-blue);   
+}
+
+.plan-selection label:after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr-white);
+    border-radius: 100vmax;
+    transition: 0.35s;
+}
+
+.plan-selection input:checked + label:after{
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.plan-selection label:active::after{
+    width: 20px;
+}
+
 
 /* ------------------- Form step 3 ------------------- */
 
@@ -525,19 +609,11 @@ body{
 
 /* ------------------- Footer ------------------- */
 
-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
 .btn-next-previous{
     background-color: var(--clr-white);
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 3px;
 }
 
 .btn-next-previous .previous-step{
@@ -559,4 +635,14 @@ footer{
     color: var(--clr-white);
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.previous-step:hover{
+    transform: scale(1.1);
+}
+
+.next-step:hover{
+    background-color: var(--clr-purplish-blue);
+    transform: scale(1.1);
 }
