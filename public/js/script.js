@@ -157,14 +157,6 @@ btnAddOns.forEach(btn => {
 });
 
 // From step 2 : Month & Yearly 
-
-// Function for the selected plan : Month & Yearly
-
-// // Step form 4 : Add-ons prices
-// const priceOnlineBill = document.querySelector('.conclusion-properties-online-bill p:nth-child(1)');
-// const priceStorageBill = document.querySelector('.conclusion-properties-storage-bill p:nth-child(1)');
-// const priceCustomizableBill = document.querySelector('.conclusion-properties-customizable-bill p:nth-child(1)');
-
 const toggleCheckbox = () => {
     checkboxPlanSelection.checked = !checkboxPlanSelection.checked;
 
