@@ -37,7 +37,9 @@ const pricePro = document.querySelector('.pro-properties p:nth-child(2)');
 
 // Step form 2 : Advertiser
 
-const pAdvertisement = document.querySelectorAll('.advertisement');
+const pAdvertisementArcade = document.querySelector('.arcade-properties p:nth-child(3)');
+const pAdvertisementAdvanced = document.querySelector('.advanced-properties p:nth-child(3)');
+const pAdvertisementPro = document.querySelector('.pro-properties p:nth-child(3)');
 
 // Step form 3 : Btn : Online service / Larger storage / Customizable profile
 const btnAddOns = document.querySelectorAll('.online-service, .larger-storage, .customizable-profile');
@@ -121,9 +123,9 @@ function updateCurrentStep(step){
 // Define steps
 const steps = [
     { form: form1, button: btn1, hasPrevious: false, isLast: false },
-    { form: form4, button: btn4, hasPrevious: true, isLast: false },
     { form: form2, button: btn2, hasPrevious: true, isLast: false },
-    { form: form3, button: btn3, hasPrevious: true, isLast: true },
+    { form: form3, button: btn3, hasPrevious: true, isLast: false },
+    { form: form4, button: btn4, hasPrevious: true, isLast: true },
 ];
 
 // Event for btns to go to the step of the form
@@ -137,7 +139,7 @@ steps.forEach((step) => {
 // Event for btn steps pages 
 btnAllSteps.forEach(btn => {
     btn.addEventListener('click', () => {
-        Event.preventDefault();
+        event.preventDefault();
         btnAllSteps.style.backgroundColor = "#adbeff";
     });
 });
@@ -164,6 +166,9 @@ const toggleCheckbox = () => {
         priceArcade.textContent = "$90/yr";
         priceAdvanced.textContent = "$120/yr";
         pricePro.textContent = "$150/yr";
+        pAdvertisementArcade.style.display = "block";
+        pAdvertisementAdvanced.style.display = "block";
+        pAdvertisementPro.style.display = "block";
 
         priceOnlineBill.textContent = "+$10/yr";
         priceStorageBill.textContent = "+$20/yr";
@@ -183,7 +188,10 @@ const toggleCheckbox = () => {
         priceArcade.textContent = "$9/mo";
         priceAdvanced.textContent = "$12/mo";
         pricePro.textContent = "$15/mo";
-        pAdvertisement.display = "block";
+        pAdvertisementArcade.style.display = "none";
+        pAdvertisementAdvanced.style.display = "none";
+        pAdvertisementPro.style.display = "none";
+
 
         priceOnlineBill.textContent = "+$1/mo";
         priceStorageBill.textContent = "+$2/mo";
