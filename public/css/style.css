@@ -25,6 +25,7 @@
     --fs-small-2 : 0.85em;
     --fs-normal : 1em;
     --fs-big: 1.4em;
+    --fs-desktop-big: 2em;
 }
 
 /* ------------------- Globals ------------------- */
@@ -55,27 +56,151 @@ body{
     display: none;
 }
 
-/* - Btn for each form's steps - */
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* ------------------- Media queries : 375px - 1023px ------------------- */
+
+@media (min-width: 375px) and (max-width: 1023px) {
+
+    .step-form{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem 0rem 6rem;
+        background-image: url(/assets/images/bg-sidebar-mobile.svg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .step-info p{
+        display: none;
+    }
+
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        padding: 2rem;
+        border-radius: 1vmax;
+        background-color: var(--clr-white);
+    }
+
+    .form-step-1{
+        display: block;
+        position: fixed;
+        top: 78px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .form p:nth-child(1){
+        font-size: 1.4em;
+        font-weight: var(--fw-big);
+        color: var(--clr-marine-blue);
+    }
+    
+    .form p:nth-child(2){
+        font-size: 0.96em;
+        font-weight: var(--fw-needle);
+        color: var(--clr-cool-gray);
+        padding-bottom: 10px;
+    }
+
+    
+
 }
 
-.steps-form{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem 0rem 6rem;
-    background-image: url(/assets/images/bg-sidebar-mobile.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* ------------------- Media queries : 1023px ------------------- */
+
+
+@media (min-width: 1024px){
+
+    body{
+        background-color: var(--clr-light-blue);
+    }
+
+    /* Multi step form */
+
+    .multi-step-form{
+        display: flex;
+        border-radius: 1vmax;
+        background-color: var(--clr-white);
+        min-width: 100svh;
+    }
+
+    .step-form{
+        position: relative;
+        border-radius: 1vmax;
+        margin: 1rem;
+        min-height: 65svh;
+        min-width: 30%;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        background-image: url(/assets/images/bg-sidebar-desktop.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+
+    .step-info{
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .step-info p{
+        text-transform: uppercase;
+    }
+
+    .step-info p:nth-child(1){
+        font-size: var(--fs-small);
+        color: var(--clr-cool-gray);
+    }
+
+    .step-info p:nth-child(2){
+        font-size: var(--fs-small-2);
+        color: var(--clr-white);
+    }
+
+    /* Form */
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        padding: 1rem 0rem 0rem 4rem;
+        border-radius: 1vmax;
+        background-color: var(--clr-white);
+    }
+
+    .form p:nth-child(1){
+        font-size: var(--fs-desktop-big);
+        font-weight: var(--fw-big);
+        color: var(--clr-marine-blue);
+
+    }
+
+    .form p:nth-child(2){
+        font-size: var(--fs-normal);
+        font-weight: var(--fw-needle);
+        color: var(--clr-cool-gray);
+    }
+
+    footer{
+        display: none;
+    }
 }
 
-.steps-form button{
+
+
+.step-form button{
     width: 35px;
     padding: 5px;
     border: 1px solid;
@@ -86,27 +211,9 @@ header{
     cursor: pointer;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    padding: 2rem;
-    border-radius: 1vmax;
-    background-color: var(--clr-white);
-}
 
-.form p:nth-child(1){
-    font-size: 1.4em;
-    font-weight: var(--fw-big);
-    color: var(--clr-marine-blue);
-}
 
-.form p:nth-child(2){
-    font-size: 0.96em;
-    font-weight: var(--fw-needle);
-    color: var(--clr-cool-gray);
-    padding-bottom: 10px;
-}
+
 
 /* Toggle button */
 
@@ -169,14 +276,7 @@ header{
 
 /* ------------------- Form step 1 ------------------- */
 
-.form-step-1{
-    display: block;
-    position: fixed;
-    top: 78px;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
+
 
 .form-step-1 label{
     font-size: var(--fs-small);
