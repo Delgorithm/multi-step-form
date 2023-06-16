@@ -409,10 +409,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* margin-top: 5px;
-    padding: 1rem; */
     border-radius: 1vmax;
     background-color: var(--clr-alabaster);
+}
+
+.form-step-2 .form .plan-selection p:nth-child(1){
+    font-size: var(--fs-normal);
 }
 
 .plan-selection input[type=checkbox]{
