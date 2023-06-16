@@ -293,9 +293,9 @@ body{
 
     .btn-next-previous{
         position: fixed;
-        top: 655px;
-        left: 400px;
-        width: 500px;
+        top: 75%;
+        left: 40%;
+        width: 44%;
     }
     
 
