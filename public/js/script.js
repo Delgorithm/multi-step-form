@@ -18,7 +18,6 @@ const form3 = document.querySelector('.form-step-3')
 const form4 = document.querySelector('.form-step-4')
 
 // Step form 2 : Btn : Arcade / Advanced / Pro
-
 const btnPlan = document.querySelectorAll('.arcade, .advanced, .pro');
 const btnArcade = document.querySelector('.arcade');
 const btnAdvanced = document.querySelector('.advanced');
@@ -36,7 +35,6 @@ const priceAdvanced = document.querySelector('.advanced-properties p:nth-child(2
 const pricePro = document.querySelector('.pro-properties p:nth-child(2)');
 
 // Step form 2 : Advertiser
-
 const pAdvertisementArcade = document.querySelector('.arcade-properties p:nth-child(3)');
 const pAdvertisementAdvanced = document.querySelector('.advanced-properties p:nth-child(3)');
 const pAdvertisementPro = document.querySelector('.pro-properties p:nth-child(3)');
@@ -159,6 +157,7 @@ btnAddOns.forEach(btn => {
 });
 
 // From step 2 : Month & Yearly 
+
 const toggleCheckbox = () => {
     checkboxPlanSelection.checked = !checkboxPlanSelection.checked;
 
@@ -166,6 +165,11 @@ const toggleCheckbox = () => {
         priceArcade.textContent = "$90/yr";
         priceAdvanced.textContent = "$120/yr";
         pricePro.textContent = "$150/yr";
+
+        priceOnlineService.textContent = "+$10/yr";
+        priceLargerStorage.textContent = "+$20/yr"
+        priceCustomizableProfile.textContent = "+$20/yr";
+
         pAdvertisementArcade.style.display = "block";
         pAdvertisementAdvanced.style.display = "block";
         pAdvertisementPro.style.display = "block";
@@ -179,7 +183,7 @@ const toggleCheckbox = () => {
         pMonthly.style.color = "#9699ab";
 
         setTimeout(() => {
-            pYearly.style.fontSize = "1.4em";
+            pYearly.style.fontSize = "1em";
             pYearly.style.fontWeight = "700";
             pYearly.style.color = "#02295a";
         }, 100);
@@ -188,21 +192,25 @@ const toggleCheckbox = () => {
         priceArcade.textContent = "$9/mo";
         priceAdvanced.textContent = "$12/mo";
         pricePro.textContent = "$15/mo";
-        pAdvertisementArcade.style.display = "none";
-        pAdvertisementAdvanced.style.display = "none";
-        pAdvertisementPro.style.display = "none";
 
-
+        priceOnlineService.textContent = "+$1/mo";
+        priceLargerStorage.textContent = "+$2/mo"
+        priceCustomizableProfile.textContent = "+$2/mo";
+        
         priceOnlineBill.textContent = "+$1/mo";
         priceStorageBill.textContent = "+$2/mo";
         priceCustomizableBill.textContent = "+$2/mo"
+
+        pAdvertisementArcade.style.display = "none";
+        pAdvertisementAdvanced.style.display = "none";
+        pAdvertisementPro.style.display = "none";
 
         pYearly.style.fontSize = "1em";
         pYearly.style.fontWeight = "300";
         pYearly.style.color = "#9699ab";
 
         setTimeout(() => {
-            pMonthly.style.fontSize = "1.4em";
+            pMonthly.style.fontSize = "1em";
             pMonthly.style.fontWeight = "700";
             pMonthly.style.color = "#02295a";
         }, 100);
